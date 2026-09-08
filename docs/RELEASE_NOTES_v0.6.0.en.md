@@ -1,5 +1,7 @@
 # BailingHub v0.6.0: Follow the Conversation Through Its Business Actions
 
+> This source tag and npm package remain historical artifacts; the formal Release source check did not complete. Use [v0.6.1](RELEASE_NOTES_v0.6.1.en.md) for new installations.
+
 A conversation may query account A and then update account B. Previously, administrators had to inspect separate execution records to find out what each account did. With a compatible client, they can now read the conversation first, then follow it into the original actions and approvals.
 
 ## What changes for users
@@ -15,9 +17,9 @@ Start with the [user guide](user-guide/conversations.en.md). Client developers c
 
 | How you use BailingHub | What to prepare |
 |---|---|
-| You operate a Hub and want full local-agent conversations in its console | Upgrade Core to0.6.0, apply the new migration, and use a client that synchronizes visible conversations. |
+| You operate a Hub and want full local-agent conversations in its console | Upgrade Core to 0.6.0, apply the new migration, and use a client that synchronizes visible conversations. |
 | You use DeepSeek Harness with several business accounts | Install the separate `dsh-bailinghub@0.4.0` package, which pins `bailinghub-mcp-server@0.4.0`. Authorize each account and select the conversation scope before the first message. |
-| You build a desktop or other agent client | Use Agent Client SDK0.4.0 and integrate scope, original visible history, durable capture and status. Changing a dependency version alone does not complete host integration. |
+| You build a desktop or other agent client | Use Agent Client SDK 0.4.0 and integrate scope, original visible history, durable capture and status. Changing a dependency version alone does not complete host integration. |
 | You use web chat, Client API, Dify/n8n tasks or static MCP | Existing entry points remain usable without a new local client. Other adapters retain their independent release cycles. |
 
 Prepare Core first, then the SDK and client. Upgrading Core alone cannot make older clients send their missing text; updating a plugin cannot add archive APIs to an older Core. Multi-account scope currently covers one business system and workspace, not cross-system or cross-route orchestration.
